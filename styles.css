@@ -1,0 +1,158 @@
+/* Style Guide - Color Scheme */
+:root {
+    --neutral: #DCDCDC;
+    --accent: #F4F4F4;
+    --secondary: #2B92A4;
+    --secondary-darker: #165B67;
+    --primary: #2E1834;
+    --primary-bg: #0b000e;
+    --semi-bold: 500;
+}
+
+/* CSS Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 1px transparent;
+    color: var(--accent);
+}
+
+/* HTML, Body, and Layout Styles */
+
+html {
+    scroll-behavior: smooth;
+    background-color: #000;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--primary-bg);
+    margin: 0 auto;
+    max-width: 1440px;
+    min-height: 100vh;
+    line-height: 1.8;
+}
+
+header,
+nav,
+main {
+    margin: 0 7em;
+}
+
+/* Header and Navigation Styles */
+.header-and-nav {
+    position: sticky;
+    z-index: 999;
+    top: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0b000eb7;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(37, 37, 37, 0.24);
+}
+
+header img {
+    width: auto;
+    max-width: 100px;
+}
+
+header,
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 1em;
+    font-size: 1.2rem;
+}
+
+nav ul li a {
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: text-shadow 0.2s ease, color 0.2s ease;
+}
+
+nav ul li a:hover {
+    text-shadow: 0.6px 0 0 var(--accent), -0.6px 0 0 var(--accent);
+    color: var(--accent);
+    cursor: pointer;
+}
+
+/* Hero Section */
+#hero {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-height: 550px;
+    aspect-ratio: 16 / 9;
+    background-image: url('images/hero-img.png');
+    background-size: cover;
+    background-position: 50% 50%;
+    display: grid;
+    padding: 1em 7em;
+    text-align: left;
+}
+
+#hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #120116a9;
+    z-index: 1;
+}
+
+#hero h1 {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 6.1rem;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 5px 5px 15px #000;
+    line-height: 1.2;
+    z-index: 2;
+    padding: 0;
+}
+
+#hero #cta-button {
+    z-index: 2;
+}
+
+#hero input[type="button"] {
+    z-index: 2;
+    background-color: var(--secondary);
+    border-radius: 17px;
+    width: 21%;
+    height: 2.4em;
+    max-height: 65px;
+    font-size: 1.5rem;
+    font-weight: var(--semi-bold);
+    font-family: 'Poppins', sans-serif;
+}
+
+#hero input[type="button"]:hover {
+    background-color: var(--secondary-darker);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#hero-subtitle {
+    width: 100%;
+    padding: 1em 5em;
+    font-size: 1.6rem;
+    font-weight: var(--semi-bold);
+}
+
+/* Main Styles */

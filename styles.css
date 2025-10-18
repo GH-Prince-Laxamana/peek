@@ -29,15 +29,8 @@ html {
 body {
     background-color: var(--primary-bg);
     margin: 0 auto;
-    max-width: 1440px;
     min-height: 100vh;
     line-height: 1.8;
-}
-
-header,
-nav,
-main {
-    margin: 0 7em;
 }
 
 /* Header and Navigation Styles */
@@ -45,6 +38,7 @@ main {
     position: sticky;
     z-index: 999;
     top: 0;
+    padding: 0 7em;
     width: 100%;
     height: auto;
     display: flex;
@@ -76,7 +70,7 @@ nav ul {
 
 nav ul li {
     display: inline-block;
-    margin: 0 1em;
+    padding: 0 1em;
     font-size: 1.2rem;
 }
 
@@ -101,7 +95,7 @@ nav ul li a:hover {
     aspect-ratio: 16 / 9;
     background-image: url('images/hero-img.png');
     background-size: cover;
-    background-position: 50% 50%;
+    background-position: 50% 30%;
     display: grid;
     padding: 1em 7em;
     text-align: left;
@@ -118,7 +112,7 @@ nav ul li a:hover {
 #hero h1 {
     width: 100%;
     margin: 0 auto;
-    font-size: 6.1rem;
+    font-size: 7rem;
     font-family: 'Montserrat', sans-serif;
     text-shadow: 5px 5px 15px #000;
     line-height: 1.2;
@@ -134,7 +128,7 @@ nav ul li a:hover {
     z-index: 2;
     background-color: var(--secondary);
     border-radius: 17px;
-    width: 21%;
+    width: 10em;
     height: 2.4em;
     max-height: 65px;
     font-size: 1.5rem;
@@ -156,3 +150,23 @@ nav ul li a:hover {
 }
 
 /* Main Styles */
+
+
+/* Media Queries */
+/* Desktop - Large */
+@media (max-width: 1440px) {
+    #hero h1 {
+        font-size: 6rem;
+    }
+
+    #hero-subtitle {
+        font-size: 1.4rem;
+    }
+}
+
+/* Desktop - Normal */
+@media (max-width: 1024px) {
+    #hero h1 {
+        font-size: 4rem;
+    }
+}

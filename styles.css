@@ -154,9 +154,26 @@ nav ul li a:hover {
 section {
     padding: 0 7em;
 }
+
+section:first-of-type h1 {
+    font-size: 9rem;
+}
+
 section h1 {
-    font-size: 6.5rem;
+    font-size: 8rem;
     font-family: 'Montserrat', sans-serif;
+}
+
+.section-description {
+    width: 50%;
+    font-size: 1.6rem;
+    font-weight: var(--semi-bold);
+    text-align: justify;
+}
+
+#about img {
+    position: relative;
+    top: -10%;
 }
 
 /* Media Queries */

@@ -16,6 +16,14 @@
 </head>
 
 <body>
+    <div id="page-loader">
+        <div class="loader-content">
+            <img src="images/full-logo-darkbg-removebg-preview.png" alt="Peek's logo" class="loader-logo">
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
+
     <div class="header-and-nav">
         <header>
             <a href="#"><img src="images/full-logo-darkbg-removebg-preview.png" alt="Peek's logo"></a>
@@ -66,28 +74,30 @@
             <h1>Learn</h1>
 
             <p class="section-description">
-                Learning about online privacy should be straightforward. Our guides provide clear, practical insights on
-                what to keep private, how to identify risky terms, and how to approach privacy policies with confidence.
+                Learning about online privacy should be straightforward. Our guides provide clear, practical
+                insights on
+                what to keep private, how to identify risky terms, and how to approach privacy policies with
+                confidence.
                 <span class="desc-highlight">Click a lesson below to learn.</span>
             </p>
 
             <div class="lesson-group">
                 <figure class="lesson">
-                    <a href="#">
+                    <a href="lesson-1.html">
                         <img src="images/lesson-1.png" alt="Illustration for What Should Stay Private?">
                         <figcaption class="lesson-title">What Should Stay Private?</figcaption>
                     </a>
                 </figure>
 
                 <figure class="lesson">
-                    <a href="#">
+                    <a href="lesson-2.html">
                         <img src="images/lesson-2.png" alt="Illustration for The Way to Understanding Privacy Policies">
                         <figcaption class="lesson-title">The Way to Understanding Privacy Policies</figcaption>
                     </a>
                 </figure>
 
                 <figure class="lesson">
-                    <a href="#">
+                    <a href="lesson-3.html">
                         <img src="images/lesson-3.png" alt="Illustration for How To Spot Risky Terms?">
                         <figcaption class="lesson-title">How To Spot Risky Terms?</figcaption>
                     </a>
@@ -164,6 +174,43 @@
             </a>
         </div>
     </footer>
+
+
+    <script>
+        window.addEventListener('load', () => {
+            const spinner = document.querySelector('.loading-spinner');
+            const logo = document.querySelector('.loader-logo');
+            const loader = document.getElementById('page-loader');
+
+            if (sessionStorage.getItem('loaderShown')) {
+                // Hide loader immediately
+                const loader = document.getElementById('page-loader');
+                if (loader) loader.style.display = 'none';
+                return;
+            }
+
+            setTimeout(() => {
+                spinner.style.opacity = '1';
+                spinner.style.transform = 'scale(1)';
+                spinner.style.animation = 'spin 1.2s linear infinite';
+            }, 1000);
+
+            setTimeout(() => {
+                spinner.style.animation = 'spin 1.2s linear infinite, spinnerFadeOut 0.6s ease forwards';
+            }, 4000);
+
+            setTimeout(() => {
+                logo.style.animation = 'logoFadeOut 0.6s ease forwards';
+            }, 5000);
+
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => loader.style.display = 'none', 800);
+                sessionStorage.setItem('loaderShown', 'true');
+            }, 5200);
+        });
+    </script>
+
 </body>
 
 </html>

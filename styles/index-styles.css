@@ -48,6 +48,7 @@
     font-size: 1.5rem;
     font-weight: var(--semi-bold);
     font-family: 'Poppins', sans-serif;
+    border: none;
 }
 
 #hero input[type="button"]:hover {

@@ -209,7 +209,6 @@ section:first-of-type h1 {
 }
 
 /* LEARN SECTION */
-
 .desc-highlight {
     color: #64C1D2;
     font-weight: bold;
@@ -247,6 +246,8 @@ section:first-of-type h1 {
     font-weight: var(--semi-bold);
     color: #7EDDEE;
 }
+
+/* CONTACT US SECTION */
 
 /* Media Queries */
 /* Desktop - Large */

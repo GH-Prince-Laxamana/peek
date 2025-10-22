@@ -11,18 +11,19 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/layout-styles.css">
+    <link rel="stylesheet" href="styles/index-styles.css">
 </head>
 
 <body>
     <div class="header-and-nav">
         <header>
-            <a href="#top"><img src="images/full-logo-darkbg-removebg-preview.png" alt="Peek's logo"></a>
+            <a href="#"><img src="images/full-logo-darkbg-removebg-preview.png" alt="Peek's logo"></a>
         </header>
 
         <nav>
             <ul>
-                <li><a href="#top">Home</a></li>
+                <li><a href="#">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#learn">Learn</a></li>
                 <li><a href="#contact-us">Contact Us</a></li>
@@ -72,20 +73,27 @@
 
             <div class="lesson-group">
                 <figure class="lesson">
-                    <img src="images/lesson-1.png" alt="Illustration for What Should Stay Private?">
-                    <figcaption class="lesson-title">What Should Stay Private?</figcaption>
+                    <a href="#">
+                        <img src="images/lesson-1.png" alt="Illustration for What Should Stay Private?">
+                        <figcaption class="lesson-title">What Should Stay Private?</figcaption>
+                    </a>
                 </figure>
 
                 <figure class="lesson">
-                    <img src="images/lesson-2.png" alt="Illustration for The Way to Understanding Privacy Policies">
-                    <figcaption class="lesson-title">The Way to Understanding Privacy Policies</figcaption>
+                    <a href="#">
+                        <img src="images/lesson-2.png" alt="Illustration for The Way to Understanding Privacy Policies">
+                        <figcaption class="lesson-title">The Way to Understanding Privacy Policies</figcaption>
+                    </a>
                 </figure>
 
                 <figure class="lesson">
-                    <img src="images/lesson-3.png" alt="Illustration for How To Spot Risky Terms?">
-                    <figcaption class="lesson-title">How To Spot Risky Terms?</figcaption>
+                    <a href="#">
+                        <img src="images/lesson-3.png" alt="Illustration for How To Spot Risky Terms?">
+                        <figcaption class="lesson-title">How To Spot Risky Terms?</figcaption>
+                    </a>
                 </figure>
             </div>
+
         </section>
 
         <section id="contact-us">
@@ -100,24 +108,39 @@
                         Your thoughts can make online privacy easier and safer for everyone.
                     </p>
 
-                    <p><i class="fa-solid fa-phone"></i>(123) 456 789 or (63) 098 765 4321</p>
-                    <p><i class="fa-solid fa-location-dot"></i>#1 Holy Angel Avenue, Santo Rosario, Angeles City,
-                        Pampanga, Philippines 2009</p>
+                    <address>
+                        <p>
+                            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                            <a href="tel:+63987654321">(123) 456 789 or (63) 098 765 4321</a>
+                        </p>
+                        <p>
+                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                            <a href="https://www.google.com/maps/place/Holy+Angel+University/@15.1330832,120.5874361,17z/data=!3m1!4b1!4m6!3m5!1s0x3396f24ec2f5a1f9:0x5e0af8a6aaab2282!8m2!3d15.133078!4d120.590011!16s%2Fm%2F0266jc4?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D"
+                                target="_blank" rel="noopener noreferrer">
+                                #1 Holy Angel Avenue, Santo Rosario, Angeles City, Pampanga, Philippines 2009
+                            </a>
+                        </p>
+                    </address>
                 </div>
 
-                <form action="#" method="post">
+                <form action="mailto:prince.laxamana116@gmail.com" method="post" enctype="text/plain">
                     <fieldset>
+                        <legend>Send us a message</legend>
+
                         <div class="form-group">
+                            <label for="name">Full Name</label>
                             <input type="text" id="name" name="name" placeholder="Enter your full name" required>
                         </div>
 
                         <div class="form-group">
+                            <label for="email">Email Address</label>
                             <input type="email" id="email" name="email" placeholder="Enter your email address" required>
                         </div>
 
                         <div class="form-group">
-                            <textarea id="message" name="message" rows="5" cols="100"
-                                placeholder="What would you like to share with us?" required></textarea>
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" placeholder="What would you like to share with us?"
+                                required></textarea>
                         </div>
 
                         <button type="submit">Send Message</button>
@@ -128,9 +151,19 @@
     </main>
 
     <footer>
-        
+        <p>Prince Laxamana, 2025. All Rights Reserved.</p>
+        <div class="footer-icons">
+            <a href="https://www.linkedin.com/in/prince-laxamana-b89814359" target="_blank" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/GH-Prince-Laxamana/peek" target="_blank" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.freecodecamp.org/fcc-prince-laxamana" target="_blank" aria-label="freeCodeCamp">
+                <i class="fa-brands fa-free-code-camp"></i>
+            </a>
+        </div>
     </footer>
-
 </body>
 
 </html>

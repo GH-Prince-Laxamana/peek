@@ -1,0 +1,164 @@
+/* GENERAL/LAYOUT STYLES FOR ALL WEBPAGES */
+
+/* Style Guide - Color Scheme */
+:root {
+    --neutral: #DCDCDC;
+    --accent: #F4F4F4;
+    --secondary: #2B92A4;
+    --secondary-darker: #165B67;
+    --primary: #2E1834;
+    --primary-bg: #0b000e;
+    --semi-bold: 500;
+}
+
+/* CSS Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: var(--accent);
+}
+
+/* HTML, Body, and Layout Styles */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+    background-color: #000;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--primary-bg);
+    margin: 0 auto;
+    height: auto;
+    min-height: 100%;
+    line-height: 1.8;
+    max-width: 2000px;
+}
+
+/* Header and Navigation Styles */
+.header-and-nav {
+    position: sticky;
+    z-index: 999;
+    top: 0;
+    padding: 0 7em;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(37, 37, 37, 0.24);
+    background: #25112b4b;
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+}
+
+header img {
+    width: auto;
+    max-width: 100px;
+}
+
+header,
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 0 1em;
+    font-size: 1.2rem;
+}
+
+nav ul li a {
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: text-shadow 0.2s ease, color 0.2s ease;
+}
+
+nav ul li a:hover {
+    text-shadow: 0.6px 0 0 var(--accent), -0.6px 0 0 var(--accent);
+    color: var(--accent);
+    cursor: pointer;
+}
+
+/* Main Styles */
+section {
+    padding: 0 7em;
+}
+
+section h1 {
+    margin-top: 2em;
+    font-size: 7rem;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.2;
+}
+
+.section-description {
+    font-size: 1.6rem;
+    font-weight: var(--semi-bold);
+    text-align: justify;
+    margin-bottom: 1em;
+}
+
+/* Footer Styles */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.5em 8em;
+    border-top: 1px solid rgba(37, 37, 37, 0.24);
+    background: #25112b4b;
+}
+
+footer p {
+    font-size: 0.95rem;
+    color: var(--accent);
+    opacity: 0.9;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 1em;
+}
+
+.footer-icons a {
+    color: var(--accent);
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-icons a:hover {
+    color: var(--secondary);
+    transform: translateY(-2px);
+}
+
+/* Media Queries */
+/* Desktop - Large */
+@media (max-width: 1620px) {
+    section {
+        padding: 0 10em 1em;
+    }
+
+    .header-and-nav {
+        padding: 0 10em;
+    }
+
+    section h1 {
+        font-size: 6rem;
+        margin-top: 1.2em;
+    }
+
+    .section-description {
+        font-size: 1.4rem;
+        margin-bottom: 0.5em;
+    }
+}

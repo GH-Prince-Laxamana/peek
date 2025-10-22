@@ -1,0 +1,236 @@
+/* SPECIFIC STYLES FOR LESSON PAGES (lesson-#.html) */
+
+section {
+    margin: 0 auto;
+    text-align: center;
+}
+
+section h1 {
+    font-size: 5rem;
+    margin: 1em auto 0.5em;
+}
+
+section h3 {
+    font-size: 3rem;
+    font-weight: var(--semi-bold);
+    margin-bottom: 0.5em;
+}
+
+section .section-description {
+    text-align: center;
+}
+
+/* TABLE STYLES */
+table {
+    margin: 1em auto;
+}
+
+th,
+td {
+    width: 500px;
+    padding: 0.7em;
+    font-size: 1.4rem;
+}
+
+th {
+    background-color: #fff;
+    color: var(--primary);
+}
+
+td {
+    background-color: #ffffff04;
+}
+
+iframe {
+    border: 1px solid;
+    width: 60em;
+    height: 34em;
+    margin: 1em auto;
+}
+
+figcaption {
+    font-size: 1.4rem;
+    font-style: italic;
+    margin: 0.8em auto;
+}
+
+#quiz-container {
+    width: 900px;
+    margin: 2em auto;
+    padding: 2em;
+    text-align: center;
+    background-color: #2b0731;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px #ffffffb4, 0 -1px 2px #ffffffb4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#question-text {
+    font-size: 1.5rem;
+    font-weight: var(--semi-bold);
+    margin: 0 auto 1em;
+}
+
+.answer {
+    display: block;
+    width: 100%;
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+    background: var(--accent);
+    border: none;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background 0.3s;
+}
+
+.answer:hover {
+    background: #fbc3ff;
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+button {
+    min-width: 7em;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: var(--semi-bold);
+    transition: 0.3s;
+}
+
+.next,
+.prev,
+.submit {
+    background: var(--secondary);
+    color: white;
+    box-shadow: 1px 4px 10px #000000bc;
+}
+
+.retry {
+    background: var(--secondary);
+    color: white;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+.hidden {
+    display: none;
+}
+
+.correct {
+    background: #2e8136 !important;
+    color: #fff;
+}
+
+.wrong {
+    background: #6c4f75 !important;
+    color: #fff;
+}
+
+.result-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65em;
+    color: #fff;
+}
+
+.score-circle {
+    width: 7em;
+    height: 7em;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+.score-circle p {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #3b0a45;
+}
+
+.result-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 auto;
+}
+
+.result-message {
+    font-size: 1.4rem;
+    max-width: 500px;
+    line-height: 1.5;
+}
+
+@media (max-width: 1620px) {
+    section h1 {
+        font-size: 4rem;
+    }
+
+    section h3 {
+        font-size: 2rem;
+    }
+
+    th,
+    td {
+        width: 500px;
+        font-size: 1.2rem;
+    }
+
+    iframe {
+        width: 49em;
+        height: 28em;
+    }
+
+
+    figcaption {
+        font-size: 1.2rem;
+        margin: 0.6em auto;
+    }
+
+    #question-text {
+        font-size: 1.2rem;
+    }
+
+    .answer,
+    button {
+        font-size: 1rem;
+    }
+
+    .score-circle {
+        width: 9.5em;
+        height: 9.5em;
+        margin-bottom: 1em;
+    }
+
+    .score-circle p {
+        font-size: 4rem;
+    }
+
+    .result-title {
+        font-size: 1.5rem;
+    }
+
+    .result-message {
+        font-size: 1.2rem;
+    }
+}

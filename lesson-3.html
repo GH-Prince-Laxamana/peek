@@ -11,12 +11,12 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="styles/layout-styles.css">
     <link rel="stylesheet" href="styles/lesson-styles.css">
+    <link rel="stylesheet" href="styles/layout-styles.css">
 </head>
 
 <body>
-    <div class="header-and-nav">
+    <div class="header-and-nav tablet desktop">
         <header>
             <a href="index.html"><img src="images/full-logo-darkbg-removebg-preview.png" alt="Peek's logo"></a>
         </header>
@@ -29,9 +29,29 @@
         </nav>
     </div>
 
+    <!-- BURGER NAV FOR MOBILE -->
+    <header class="mobile">
+        <div class="nav-overlay" id="nav-overlay"></div> <!-- NEW -->
+
+        <img class="mobile-logo" src="images/full-logo-darkbg-removebg-preview.png" alt="Peek's Logo" />
+
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#learn">Learn</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <main>
         <section>
-            <h1>How To Spot Risky Terms?</h1>
+            <h1 class="lesson-heading">How To Spot Risky Terms?</h1>
 
             <p class="section-description">
                 Privacy policies may not be written with your best interests in mind. Some use complicated wording or
@@ -92,7 +112,8 @@
                     </div>
                     <h4>“For Marketing Purposes”</h4>
                     <p class="section-description">
-                        This means your information can be directly used to target you with ads, promotions, or even resold to advertising networks.
+                        This means your information can be directly used to target you with ads, promotions, or even
+                        resold to advertising networks.
                     </p>
                 </div>
             </div>
@@ -146,50 +167,71 @@
 
 
     <script>
+        const burger = document.getElementById('burger');
+        const navMenu = document.getElementById('nav-menu');
+        const navOverlay = document.getElementById('nav-overlay');
+        const logo = document.querySelector('.mobile-logo');
+
+        burger.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+            navOverlay.classList.toggle('show');
+            burger.classList.toggle('active');
+            logo.classList.toggle('hide');
+        });
+
+        document.querySelectorAll('#nav-menu a').forEach(a => {
+            a.addEventListener('click', () => {
+                navMenu.classList.remove('show');
+                navOverlay.classList.remove('show');
+                burger.classList.remove('active');
+                logo.classList.remove('hide');
+            });
+        });
+
         const quizData = [
             {
-                question: "Which of the following is considered sensitive personal information?",
+                question: "Which phrase should be a red flag in privacy policies?",
                 answers: [
-                    { text: "Your favorite color", correct: false },
-                    { text: "Your home address", correct: true },
-                    { text: "Your pet’s name", correct: false },
-                    { text: "Your favorite food", correct: false },
+                    { text: "“We protect your data”", correct: false },
+                    { text: "“We may share with third parties”", correct: true },
+                    { text: "“You can update your info anytime”", correct: false },
+                    { text: "“We respect your privacy”", correct: false },
                 ]
             },
             {
-                question: "Why should you avoid sharing your passwords?",
+                question: "What does “retained indefinitely” usually mean?",
                 answers: [
-                    { text: "They’re too long to remember", correct: false },
-                    { text: "They keep your accounts safe", correct: true },
-                    { text: "They’re public information", correct: false },
-                    { text: "It helps friends log in for you", correct: false },
+                    { text: "Your data is deleted soon", correct: false },
+                    { text: "Your data is stored without time limit", correct: true },
+                    { text: "Your data is never collected", correct: false },
+                    { text: "Your data is always safe", correct: false },
                 ]
             },
             {
-                question: "Which of these is safe to post online?",
+                question: "Why is “personalized advertising” risky?",
                 answers: [
-                    { text: "Your school schedule", correct: false },
-                    { text: "Vacation plans", correct: false },
-                    { text: "A random landscape photo", correct: true },
-                    { text: "Your ID card", correct: false },
+                    { text: "It always costs money", correct: false },
+                    { text: "It may involve tracking your activity and data", correct: true },
+                    { text: "It makes ads prettier", correct: false },
+                    { text: "It’s the same as privacy protection", correct: false },
                 ]
             },
             {
-                question: "What does PII stand for?",
+                question: "Which of these terms means you lose control over your content once uploaded?",
                 answers: [
-                    { text: "Private Internet Information", correct: false },
-                    { text: "Personally Identifiable Information", correct: true },
-                    { text: "Personal Internal Identity", correct: false },
-                    { text: "Protected Internet Input", correct: false },
+                    { text: "“Limited use”", correct: false },
+                    { text: "“You retain ownership”", correct: false },
+                    { text: "“Irrevocable rights to your content”", correct: true },
+                    { text: "“No third-party sharing”", correct: false },
                 ]
             },
             {
-                question: "Why should you think before clicking links?",
+                question: "If a company reserves the right to change terms anytime without notice, what’s the risk?",
                 answers: [
-                    { text: "They might be phishing scams", correct: true },
-                    { text: "They make your browser slow", correct: false },
-                    { text: "They don’t open on mobile", correct: false },
-                    { text: "They use too much data", correct: false },
+                    { text: "You’ll always be notified immediately", correct: false },
+                    { text: "They could add unfavorable rules without your knowledge", correct: true },
+                    { text: "The site gets prettier", correct: false },
+                    { text: "No risk at all", correct: false },
                 ]
             }
         ];

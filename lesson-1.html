@@ -11,12 +11,12 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="styles/layout-styles.css">
     <link rel="stylesheet" href="styles/lesson-styles.css">
+    <link rel="stylesheet" href="styles/layout-styles.css">
 </head>
 
 <body>
-    <div class="header-and-nav">
+    <div class="header-and-nav tablet desktop">
         <header>
             <a href="index.html"><img src="images/full-logo-darkbg-removebg-preview.png" alt="Peek's logo"></a>
         </header>
@@ -29,9 +29,29 @@
         </nav>
     </div>
 
+    <!-- BURGER NAV FOR MOBILE -->
+    <header class="mobile">
+        <div class="nav-overlay" id="nav-overlay"></div> <!-- NEW -->
+
+        <img class="mobile-logo" src="images/full-logo-darkbg-removebg-preview.png" alt="Peek's Logo" />
+
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#learn">Learn</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <main>
         <section>
-            <h1>What Should Stay Private?</h1>
+            <h1 class="lesson-heading">What Should Stay Private?</h1>
 
             <p class="section-description">
                 Not everything online should be shared. Some information is personal, and if
@@ -41,7 +61,7 @@
 
             <h3>Key Information to Protect</h3>
 
-            <table>
+            <table class="tablet desktop">
                 <thead>
                     <tr>
                         <th>Type of Information</th>
@@ -83,6 +103,45 @@
                     </tr>
                 </tbody>
             </table>
+
+            <div class="info-list">
+                <div class="info-card">
+                    <h3>Identity Details</h3>
+                    <p><strong>Why It Matters:</strong> Prevents identity theft</p>
+                    <p><strong>Examples:</strong> Full name, birthday, address</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Financial Information</h3>
+                    <p><strong>Why It Matters:</strong> Protects your money</p>
+                    <p><strong>Examples:</strong> Bank account, credit card numbers</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Login Credentials</h3>
+                    <p><strong>Why It Matters:</strong> Keeps accounts safe</p>
+                    <p><strong>Examples:</strong> Passwords, security questions</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Contact Information</h3>
+                    <p><strong>Why It Matters:</strong> Avoids spam/scams</p>
+                    <p><strong>Examples:</strong> Phone number, personal email</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Health Information</h3>
+                    <p><strong>Why It Matters:</strong> Protects your privacy and wellbeing</p>
+                    <p><strong>Examples:</strong> Medical records, health conditions</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Location Data</h3>
+                    <p><strong>Why It Matters:</strong> Prevents tracking or stalking</p>
+                    <p><strong>Examples:</strong> Home address, GPS data, travel routes</p>
+                </div>
+            </div>
+
 
             <h3>Why keeping personal information private matters online?</h3>
 
@@ -131,8 +190,28 @@
         </div>
     </footer>
 
-
     <script>
+        const burger = document.getElementById('burger');
+        const navMenu = document.getElementById('nav-menu');
+        const navOverlay = document.getElementById('nav-overlay');
+        const logo = document.querySelector('.mobile-logo');
+
+        burger.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+            navOverlay.classList.toggle('show');
+            burger.classList.toggle('active');
+            logo.classList.toggle('hide');
+        });
+
+        document.querySelectorAll('#nav-menu a').forEach(a => {
+            a.addEventListener('click', () => {
+                navMenu.classList.remove('show');
+                navOverlay.classList.remove('show');
+                burger.classList.remove('active');
+                logo.classList.remove('hide');
+            });
+        });
+
         const quizData = [
             {
                 question: "Which of the following is considered sensitive personal information?",
@@ -144,39 +223,39 @@
                 ]
             },
             {
-                question: "Why should you avoid sharing your passwords?",
+                question: "Why should you avoid sharing your birthday publicly online?",
                 answers: [
-                    { text: "They’re too long to remember", correct: false },
-                    { text: "They keep your accounts safe", correct: true },
-                    { text: "They’re public information", correct: false },
-                    { text: "It helps friends log in for you", correct: false },
+                    { text: "It’s embarrassing", correct: false },
+                    { text: "It can be used to guess your identity or security questions", correct: true },
+                    { text: "It’s illegal to share birthdays", correct: false },
+                    { text: "None of the above", correct: false },
                 ]
             },
             {
-                question: "Which of these is safe to post online?",
+                question: "What’s an example of information that is safe to share in most cases?",
                 answers: [
-                    { text: "Your school schedule", correct: false },
-                    { text: "Vacation plans", correct: false },
-                    { text: "A random landscape photo", correct: true },
-                    { text: "Your ID card", correct: false },
+                    { text: "Current location", correct: false },
+                    { text: "Hobby (e.g., “I like painting”)", correct: true },
+                    { text: "Password hints", correct: false },
+                    { text: "Bank account number", correct: false },
                 ]
             },
             {
-                question: "What does PII stand for?",
+                question: "Which of these could help someone steal your identity if shared?",
                 answers: [
-                    { text: "Private Internet Information", correct: false },
-                    { text: "Personally Identifiable Information", correct: true },
-                    { text: "Personal Internal Identity", correct: false },
-                    { text: "Protected Internet Input", correct: false },
+                    { text: "Favorite music genre", correct: false },
+                    { text: "National ID number", correct: true },
+                    { text: "Favorite movie", correct: false },
+                    { text: "Shoe size", correct: false },
                 ]
             },
             {
-                question: "Why should you think before clicking links?",
+                question: "When filling out online forms, what should you double-check before giving personal details?",
                 answers: [
-                    { text: "They might be phishing scams", correct: true },
-                    { text: "They make your browser slow", correct: false },
-                    { text: "They don’t open on mobile", correct: false },
-                    { text: "They use too much data", correct: false },
+                    { text: "Website URL and legitimacy", correct: true },
+                    { text: "Font style of the form", correct: false },
+                    { text: "If the site looks “fancy”", correct: false },
+                    { text: "Color of the page", correct: false },
                 ]
             }
         ];

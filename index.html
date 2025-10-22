@@ -11,8 +11,8 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="styles/layout-styles.css">
     <link rel="stylesheet" href="styles/index-styles.css">
+    <link rel="stylesheet" href="styles/layout-styles.css">
 </head>
 
 <body>
@@ -24,7 +24,7 @@
     </div>
 
 
-    <div class="header-and-nav">
+    <div class="header-and-nav tablet desktop">
         <header>
             <a href="#"><img src="images/full-logo-darkbg-removebg-preview.png" alt="Peek's logo"></a>
         </header>
@@ -39,13 +39,35 @@
         </nav>
     </div>
 
-    <div id="hero">
+    <!-- BURGER NAV FOR MOBILE -->
+    <header class="mobile">
+        <div class="nav-overlay" id="nav-overlay"></div> <!-- NEW -->
+
+        <img class="mobile-logo" src="images/full-logo-darkbg-removebg-preview.png" alt="Peek's Logo" />
+
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#learn">Learn</a></li>
+                <li><a href="#contact-us">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="hero" class="tablet desktop">
         <h1>Look into Your Privacy,<br>Keep Your Online Safety.</h1>
 
         <a id="cta-button" href="#learn"><input type="button" value="Start Learning"></a>
     </div>
 
-    <p id="hero-subtitle">
+    <p id="hero-subtitle" class="tablet desktop">
         Online privacy is a fundamental safeguard for your choices, identity, and safety in the digital world.
         Identify
         risky terms and protect your data. Maintain control of your online persona.
@@ -208,6 +230,27 @@
                 setTimeout(() => loader.style.display = 'none', 800);
                 sessionStorage.setItem('loaderShown', 'true');
             }, 5200);
+        });
+
+        const burger = document.getElementById('burger');
+        const navMenu = document.getElementById('nav-menu');
+        const navOverlay = document.getElementById('nav-overlay');
+        const logo = document.querySelector('.mobile-logo');
+
+        burger.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+            navOverlay.classList.toggle('show');
+            burger.classList.toggle('active');
+            logo.classList.toggle('hide');
+        });
+
+        document.querySelectorAll('#nav-menu a').forEach(a => {
+            a.addEventListener('click', () => {
+                navMenu.classList.remove('show');
+                navOverlay.classList.remove('show');
+                burger.classList.remove('active');
+                logo.classList.remove('hide');
+            });
         });
     </script>
 

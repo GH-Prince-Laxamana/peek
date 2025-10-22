@@ -11,12 +11,12 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="styles/layout-styles.css">
     <link rel="stylesheet" href="styles/lesson-styles.css">
+    <link rel="stylesheet" href="styles/layout-styles.css">
 </head>
 
 <body>
-    <div class="header-and-nav">
+    <div class="header-and-nav tablet desktop">
         <header>
             <a href="index.html"><img src="images/full-logo-darkbg-removebg-preview.png" alt="Peek's logo"></a>
         </header>
@@ -29,9 +29,29 @@
         </nav>
     </div>
 
+    <!-- BURGER NAV FOR MOBILE -->
+    <header class="mobile">
+        <div class="nav-overlay" id="nav-overlay"></div> <!-- NEW -->
+
+        <img class="mobile-logo" src="images/full-logo-darkbg-removebg-preview.png" alt="Peek's Logo" />
+
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#learn">Learn</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <main>
         <section>
-            <h1>The Way to Understanding Privacy Policies</h1>
+            <h1 class="lesson-heading">The Way to Understanding Privacy Policies</h1>
 
             <p class="section-description">
                 Privacy policies are everywhere. They are present on websites, apps, and online forms. Yet most of us
@@ -69,7 +89,9 @@
                     <div class="privpol-text">
                         <h4>Data Sharing</h4>
                         <p class="section-description">
-                            Many privacy policies reveal that your data may be passed on to advertisers, partners, or other companies. This is where risks usually hide, because third parties can use your information in ways you might not expect.
+                            Many privacy policies reveal that your data may be passed on to advertisers, partners, or
+                            other companies. This is where risks usually hide, because third parties can use your
+                            information in ways you might not expect.
                         </p>
                     </div>
                 </div>
@@ -78,7 +100,8 @@
                     <div class="privpol-text">
                         <h4>Data Storage & Retention</h4>
                         <p class="section-description">
-                            Policies describe how long your information will be stored and where it will be kept. Some services keep your data indefinitely, which can be risky if not managed properly.
+                            Policies describe how long your information will be stored and where it will be kept. Some
+                            services keep your data indefinitely, which can be risky if not managed properly.
                         </p>
                     </div>
 
@@ -97,7 +120,8 @@
                     <div class="privpol-text">
                         <h4>User Rights</h4>
                         <p class="section-description">
-                            A good privacy policy will explain your rights — such as accessing your information, requesting corrections, or deleting your data. If these are missing, it’s a red flag.
+                            A good privacy policy will explain your rights — such as accessing your information,
+                            requesting corrections, or deleting your data. If these are missing, it’s a red flag.
                         </p>
                     </div>
                 </div>
@@ -106,13 +130,15 @@
                     <div class="privpol-text">
                         <h4>Security Measures</h4>
                         <p class="section-description">
-                            Companies should explain how they protect your data, for example through encryption or authentication steps. Weak or vague explanations usually mean weaker protections.
+                            Companies should explain how they protect your data, for example through encryption or
+                            authentication steps. Weak or vague explanations usually mean weaker protections.
                         </p>
                     </div>
 
                     <figure>
                         <img src="images/cmpp-5.png">
-                        <figcaption>Clear security measures like encryption show a company values your safety</figcaption>
+                        <figcaption>Clear security measures like encryption show a company values your safety
+                        </figcaption>
                     </figure>
                 </div>
             </div>
@@ -166,50 +192,71 @@
 
 
     <script>
+        const burger = document.getElementById('burger');
+        const navMenu = document.getElementById('nav-menu');
+        const navOverlay = document.getElementById('nav-overlay');
+        const logo = document.querySelector('.mobile-logo');
+
+        burger.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+            navOverlay.classList.toggle('show');
+            burger.classList.toggle('active');
+            logo.classList.toggle('hide');
+        });
+
+        document.querySelectorAll('#nav-menu a').forEach(a => {
+            a.addEventListener('click', () => {
+                navMenu.classList.remove('show');
+                navOverlay.classList.remove('show');
+                burger.classList.remove('active');
+                logo.classList.remove('hide');
+            });
+        });
+        
         const quizData = [
             {
-                question: "Which of the following is considered sensitive personal information?",
+                question: "What’s the first thing you should look for in a privacy policy?",
                 answers: [
-                    { text: "Your favorite color", correct: false },
-                    { text: "Your home address", correct: true },
-                    { text: "Your pet’s name", correct: false },
-                    { text: "Your favorite food", correct: false },
+                    { text: "Length of the text", correct: false },
+                    { text: "Who collects your data", correct: true },
+                    { text: "Font size", correct: false },
+                    { text: "Page design", correct: false },
                 ]
             },
             {
-                question: "Why should you avoid sharing your passwords?",
+                question: "Which section often explains how your data will be used?",
                 answers: [
-                    { text: "They’re too long to remember", correct: false },
-                    { text: "They keep your accounts safe", correct: true },
-                    { text: "They’re public information", correct: false },
-                    { text: "It helps friends log in for you", correct: false },
+                    { text: "Introduction", correct: false },
+                    { text: "Data Usage or Data Collection", correct: true },
+                    { text: "References", correct: false },
+                    { text: "Contact section", correct: false },
                 ]
             },
             {
-                question: "Which of these is safe to post online?",
+                question: "Why is it important to check for third-party sharing in policies?",
                 answers: [
-                    { text: "Your school schedule", correct: false },
-                    { text: "Vacation plans", correct: false },
-                    { text: "A random landscape photo", correct: true },
-                    { text: "Your ID card", correct: false },
+                    { text: "To know if your data may be sold or shared with others", correct: true },
+                    { text: "To see how long the policy is", correct: false },
+                    { text: "To confirm the website is colorful", correct: false },
+                    { text: "It’s not important", correct: false },
                 ]
             },
             {
-                question: "What does PII stand for?",
+                question: "Which section of the privacy policy explains your rights (like opting out)?",
                 answers: [
-                    { text: "Private Internet Information", correct: false },
-                    { text: "Personally Identifiable Information", correct: true },
-                    { text: "Personal Internal Identity", correct: false },
-                    { text: "Protected Internet Input", correct: false },
+                    { text: "Terms of Service", correct: false },
+                    { text: "User Rights/Your Choices", correct: true },
+                    { text: "Security Settings", correct: false },
+                    { text: "Logo Design", correct: false },
                 ]
             },
             {
-                question: "Why should you think before clicking links?",
+                question: "If a privacy policy is too vague (e.g., “We may use your data for various purposes”), what does that mean?",
                 answers: [
-                    { text: "They might be phishing scams", correct: true },
-                    { text: "They make your browser slow", correct: false },
-                    { text: "They don’t open on mobile", correct: false },
-                    { text: "They use too much data", correct: false },
+                    { text: "The company is being very specific", correct: false },
+                    { text: "It may hide risky practices", correct: true },
+                    { text: "It makes the policy shorter", correct: false },
+                    { text: "It’s harmless", correct: false },
                 ]
             }
         ];

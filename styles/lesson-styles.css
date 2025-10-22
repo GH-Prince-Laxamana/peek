@@ -16,6 +16,11 @@ section h3 {
     margin-bottom: 0.5em;
 }
 
+section h4 {
+    font-size: 2.5rem;
+    font-weight: var(--semi-bold);
+}
+
 section .section-description {
     text-align: center;
 }
@@ -54,6 +59,89 @@ figcaption {
     margin: 0.8em auto;
 }
 
+.compart-privol-wrap {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+
+.compart-privpol-container {
+    width: 80%;
+    display: flex;
+    gap: 3em;
+    margin: 0 auto;
+    justify-content: center;
+    align-self: center;
+}
+
+.compart-privpol-container img {
+    width: 35em;
+    max-height: 22em;
+    object-fit: cover;
+    object-position: center;
+}
+
+.privpol-text p,
+.privpol-text h4 {
+    text-align: justify;
+}
+
+.compart-privpol-container figcaption {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.rt-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1200px; 
+}
+
+.rt-card {
+    background-color: #884d985a;
+    color: #fff;
+    border-radius: 25px;
+    width: 30%;
+    min-width: 280px;
+    padding: 1em;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+.rt-icon {
+    background-color: #fff;
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    margin: 0 auto 1em;
+}
+
+.rt-icon i {
+    color: var(--primary);
+    font-size: 2.6rem;
+}
+
+.rt-card h4 {
+    font-size: 1.3rem;
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+}
+
+.rt-card p {
+    font-size: 1.2rem;
+    text-align: justify;
+}
+
+/* QUIZ STYLES */
 #quiz-container {
     width: 900px;
     margin: 2em auto;

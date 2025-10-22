@@ -189,6 +189,7 @@ section:first-of-type h1 {
 .contact-text h3 {
     font-size: 4rem;
     font-weight: 600;
+    margin-top: 0;
     margin-bottom: 0.5em;
     line-height: 1.2;
 }

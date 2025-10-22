@@ -30,7 +30,123 @@
     </div>
 
     <main>
+        <section>
+            <h1>The Way to Understanding Privacy Policies</h1>
 
+            <p class="section-description">
+                Privacy policies are everywhere. They are present on websites, apps, and online forms. Yet most of us
+                click ‘I Agree’ without reading them. Understanding the basics of privacy policies can help you spot
+                risks and make safer choices online.
+            </p>
+
+            <h3>Common Parts of a Privacy Policy</h3>
+
+
+            <div class="compart-privol-wrap">
+                <div class="compart-privpol-container">
+                    <div class="privpol-text">
+                        <h4>Data Collection</h4>
+                        <p class="section-description">
+                            Websites often ask for your personal details such as your name, email address, or browsing
+                            behavior. These are the first clues to what information you are willingly sharing. Always
+                            check
+                            if the details requested are necessary.
+                        </p>
+                    </div>
+
+                    <figure>
+                        <img src="images/cmpp-1.png">
+                        <figcaption>Websites may ask for basic details like your name or email.</figcaption>
+                    </figure>
+                </div>
+
+                <div class="compart-privpol-container">
+                    <figure>
+                        <img src="images/cmpp-2.png">
+                        <figcaption>Your data may be shared with advertisers or unknown third parties.</figcaption>
+                    </figure>
+
+                    <div class="privpol-text">
+                        <h4>Data Sharing</h4>
+                        <p class="section-description">
+                            Many privacy policies reveal that your data may be passed on to advertisers, partners, or other companies. This is where risks usually hide, because third parties can use your information in ways you might not expect.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="compart-privpol-container">
+                    <div class="privpol-text">
+                        <h4>Data Storage & Retention</h4>
+                        <p class="section-description">
+                            Policies describe how long your information will be stored and where it will be kept. Some services keep your data indefinitely, which can be risky if not managed properly.
+                        </p>
+                    </div>
+
+                    <figure>
+                        <img src="images/cmpp-3.png">
+                        <figcaption>Some companies store your data for years or even indefinitely.</figcaption>
+                    </figure>
+                </div>
+
+                <div class="compart-privpol-container">
+                    <figure>
+                        <img src="images/cmpp-4.png">
+                        <figcaption>You may request to see, edit, or delete your personal information.</figcaption>
+                    </figure>
+
+                    <div class="privpol-text">
+                        <h4>User Rights</h4>
+                        <p class="section-description">
+                            A good privacy policy will explain your rights — such as accessing your information, requesting corrections, or deleting your data. If these are missing, it’s a red flag.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="compart-privpol-container">
+                    <div class="privpol-text">
+                        <h4>Security Measures</h4>
+                        <p class="section-description">
+                            Companies should explain how they protect your data, for example through encryption or authentication steps. Weak or vague explanations usually mean weaker protections.
+                        </p>
+                    </div>
+
+                    <figure>
+                        <img src="images/cmpp-5.png">
+                        <figcaption>Clear security measures like encryption show a company values your safety</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <h3>How to quickly scan a privacy policy for red flags?</h3>
+
+            <figure>
+                <iframe src="https://www.youtube.com/embed/yrjT8m0hcKU?si=8Anhwn1OnwIZFFIf"
+                    title="How private is your personal information?" allowfullscreen>
+                </iframe>
+                <figcaption>How private is your personal information?. 2016. Action Fraud</figcaption>
+            </figure>
+        </section>
+
+
+        <section id="quiz">
+            <h3>Test Your Knowledge!</h3>
+            <p class="section-description">Let’s see how much you remember about keeping your personal information
+                private online!</p>
+
+            <div id="quiz-container">
+                <header class="quiz-header">
+                    <h2 id="question-text"></h2>
+                </header>
+                <div id="answer-buttons"></div>
+
+                <div class="nav-buttons">
+                    <button class="prev">Previous</button>
+                    <button class="next">Next</button>
+                    <button class="submit hidden">Submit Quiz</button>
+                    <button class="retry hidden">Retry</button>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -47,6 +163,179 @@
             </a>
         </div>
     </footer>
+
+
+    <script>
+        const quizData = [
+            {
+                question: "Which of the following is considered sensitive personal information?",
+                answers: [
+                    { text: "Your favorite color", correct: false },
+                    { text: "Your home address", correct: true },
+                    { text: "Your pet’s name", correct: false },
+                    { text: "Your favorite food", correct: false },
+                ]
+            },
+            {
+                question: "Why should you avoid sharing your passwords?",
+                answers: [
+                    { text: "They’re too long to remember", correct: false },
+                    { text: "They keep your accounts safe", correct: true },
+                    { text: "They’re public information", correct: false },
+                    { text: "It helps friends log in for you", correct: false },
+                ]
+            },
+            {
+                question: "Which of these is safe to post online?",
+                answers: [
+                    { text: "Your school schedule", correct: false },
+                    { text: "Vacation plans", correct: false },
+                    { text: "A random landscape photo", correct: true },
+                    { text: "Your ID card", correct: false },
+                ]
+            },
+            {
+                question: "What does PII stand for?",
+                answers: [
+                    { text: "Private Internet Information", correct: false },
+                    { text: "Personally Identifiable Information", correct: true },
+                    { text: "Personal Internal Identity", correct: false },
+                    { text: "Protected Internet Input", correct: false },
+                ]
+            },
+            {
+                question: "Why should you think before clicking links?",
+                answers: [
+                    { text: "They might be phishing scams", correct: true },
+                    { text: "They make your browser slow", correct: false },
+                    { text: "They don’t open on mobile", correct: false },
+                    { text: "They use too much data", correct: false },
+                ]
+            }
+        ];
+
+        const questionText = document.getElementById("question-text");
+        const answerButtons = document.getElementById("answer-buttons");
+        const nextBtn = document.querySelector(".next");
+        const prevBtn = document.querySelector(".prev");
+        const submitBtn = document.querySelector(".submit");
+        const retryBtn = document.querySelector(".retry");
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let answered = Array(quizData.length).fill(null);
+        let submitted = false;
+
+        function showQuestion() {
+            answerButtons.innerHTML = "";
+            const currentQuestion = quizData[currentQuestionIndex];
+            questionText.textContent = currentQuestion.question;
+
+            currentQuestion.answers.forEach((ans, i) => {
+                const btn = document.createElement("button");
+                btn.classList.add("answer");
+                btn.textContent = ans.text;
+
+                if (answered[currentQuestionIndex] === i) {
+                    if (submitted) btn.classList.add(ans.correct ? "correct" : "wrong");
+                    else btn.style.background = "#fbc3ff";
+                } else if (submitted && ans.correct) {
+                    btn.classList.add("correct");
+                }
+
+                btn.addEventListener("click", () => {
+                    if (submitted) return;
+                    answered[currentQuestionIndex] = i;
+                    showQuestion();
+                });
+
+                answerButtons.appendChild(btn);
+            });
+
+            updateNav();
+        }
+
+        function updateNav() {
+            prevBtn.style.visibility = currentQuestionIndex === 0 ? "hidden" : "visible";
+
+            if (!submitted) {
+                nextBtn.classList.toggle("hidden", currentQuestionIndex === quizData.length - 1);
+                submitBtn.classList.toggle("hidden", currentQuestionIndex !== quizData.length - 1);
+                retryBtn.classList.add("hidden");
+
+            } else {
+                nextBtn.classList.toggle("hidden", currentQuestionIndex === quizData.length - 1);
+                prevBtn.style.visibility = currentQuestionIndex === 0 ? "hidden" : "visible";
+                submitBtn.classList.add("hidden");
+                retryBtn.classList.remove("hidden");
+            }
+        }
+
+        nextBtn.addEventListener("click", () => {
+            if (currentQuestionIndex < quizData.length - 1) {
+                currentQuestionIndex++;
+                showQuestion();
+            }
+        });
+
+        prevBtn.addEventListener("click", () => {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                showQuestion();
+            }
+        });
+
+        submitBtn.addEventListener("click", () => {
+            submitted = true;
+            score = 0;
+
+            quizData.forEach((q, index) => {
+                if (answered[index] !== null && q.answers[answered[index]].correct) score++;
+            });
+
+            const message =
+                score === quizData.length
+                    ? "Great job! You’re one step closer to mastering online privacy. Keep learning and stay safe online!"
+                    : score >= quizData.length / 2
+                        ? "Nice work! You’re getting the hang of online privacy — review and keep improving!"
+                        : "Keep trying! Review your answers and learn how to protect your personal information better.";
+
+            questionText.innerHTML = `
+        <div class="result-container">
+            <div class="score-circle">
+                <p style="color: #3b0a45;">${score}/${quizData.length}</p>
+            </div>
+            <h3 class="result-title">${score === quizData.length
+                    ? "Great job!"
+                    : score >= quizData.length / 2
+                        ? "Good effort!"
+                        : "Keep learning!"
+                }</h3>
+            <p class="result-message">${message}</p>
+        </div>
+    `;
+
+            answerButtons.innerHTML = "";
+            prevBtn.classList.remove("hidden");
+            nextBtn.classList.add("hidden");
+            submitBtn.classList.add("hidden");
+            retryBtn.classList.remove("hidden");
+        });
+
+        retryBtn.addEventListener("click", () => {
+            currentQuestionIndex = 0;
+            score = 0;
+            answered = Array(quizData.length).fill(null);
+            submitted = false;
+
+            retryBtn.classList.add("hidden");
+            showQuestion();
+        });
+
+        showQuestion();
+    </script>
+
+
 </body>
 
 </html>

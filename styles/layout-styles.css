@@ -256,6 +256,10 @@ footer p {
         font-size: 2rem;
     }
 
+    section h4 {
+        font-size: 1.8rem;
+    }
+
     .section-description {
         font-size: 1.4rem;
         margin-bottom: 0.5em;
@@ -292,6 +296,10 @@ footer p {
 
     section h3 {
         font-size: 1.6rem;
+    }
+
+    section h4 {
+        font-size: 1.4rem;
     }
 
     .section-description {
@@ -350,6 +358,10 @@ footer p {
 
     section h3 {
         font-size: 1.3rem;
+    }
+
+    section h4 {
+        font-size: 1.2rem;
     }
 
     .section-description {
@@ -555,6 +567,10 @@ footer p {
         font-size: 1.1rem;
     }
 
+    section h4 {
+        font-size: 1rem;
+    }
+
     .section-description {
         font-size: 0.7rem;
     }
@@ -594,12 +610,20 @@ footer p {
         font-size: 0.9rem;
     }
 
+    section h4 {
+        font-size: 0.9rem;
+    }
+
     .section-description {
         font-size: 0.6rem;
     }
 }
 
 @media (max-width: 340px) {
+    section h4 {
+        font-size: 0.8rem;
+    }
+
     footer {
         padding: 0.7em 1.5em;
     }

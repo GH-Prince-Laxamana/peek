@@ -182,9 +182,16 @@ section {
 section h1,
 section h3 {
     margin-top: 2em;
-    font-size: 7rem;
     font-family: 'Montserrat', sans-serif;
     line-height: 1.2;
+}
+
+section h1 {
+    font-size: 7rem;
+}
+
+section h3 {
+    font-size: 4rem;
 }
 
 .section-description {
@@ -560,7 +567,7 @@ footer p {
         font-size: 3rem;
     }
 
-    #about h1,
+    #about h1, #about-mobile h1,
     #learn h1,
     #contact-us h1 {
         font-size: 2rem;

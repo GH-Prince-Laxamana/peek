@@ -23,7 +23,7 @@
     z-index: 1;
 }
 
-#hero h1 {
+#hero h1, #hero-mobile h1 {
     width: 100%;
     margin: 0 auto;
     font-size: 7rem;
@@ -34,11 +34,11 @@
     padding: 0;
 }
 
-#hero #cta-button {
+#hero #cta-button, #hero-mobile #cta-button  {
     z-index: 2;
 }
 
-#hero input[type="button"] {
+#hero input[type="button"], #hero-mobile input[type="button"] {
     z-index: 2;
     background-color: var(--secondary);
     border-radius: 17px;
@@ -51,7 +51,7 @@
     border: none;
 }
 
-#hero input[type="button"]:hover {
+#hero input[type="button"]:hover, #hero-mobile input[type="button"]:hover {
     background-color: var(--secondary-darker);
     cursor: pointer;
     transition: 0.3s;
@@ -274,7 +274,7 @@ button[type="submit"]:hover {
 /* Media Queries */
 /* Desktop - Large */
 @media (max-width: 1620px) {
-    #hero h1 {
+    #hero h1, #hero-mobile h1 {
         font-size: 5.7rem;
         margin-bottom: -1em;
     }
@@ -284,7 +284,7 @@ button[type="submit"]:hover {
         padding: 1em 7.2em;
     }
 
-    #hero {
+    #hero, #hero-mobile {
         padding: 0 10em;
     }
 
@@ -334,18 +334,18 @@ button[type="submit"]:hover {
 
 /* Desktop - Normal */
 @media (max-width: 1024px) {
-    #hero {
+    #hero, #hero-mobile {
         padding: 0 7em;
         max-height: 300px;
     }
 
-    #hero h1 {
+    #hero h1, #hero-mobile h1 {
         font-size: 3.5rem;
         margin-top: 1em;
         margin-bottom: 0;
     }
 
-    #hero input[type="button"] {
+    #hero input[type="button"], #hero-mobile input[type="button"] {
         width: 8em;
         height: 2em;
         border-radius: 13px;
@@ -444,17 +444,17 @@ button[type="submit"]:hover {
 
 /* Tablet */
 @media (max-width: 820px) {
-    #hero {
+    #hero, #hero-mobile {
         padding: 0 5em;
         max-height: 270px;
     }
 
-    #hero h1 {
+    #hero h1, #hero-mobile h1 {
         font-size: 2.8rem;
         margin-top: 0.8em;
     }
 
-    #hero input[type="button"] {
+    #hero input[type="button"], #hero-mobile input[type="button"] {
         width: 8em;
         height: 2em;
         border-radius: 8px;
@@ -474,7 +474,7 @@ button[type="submit"]:hover {
         width: 80%;
     }
 
-    #about img {
+    #about img, #about-mobile img {
         top: 0.7rem;
         right: 4.5em;
         max-width: 250px;
@@ -552,14 +552,14 @@ button[type="submit"]:hover {
 
 /* Mobile */
 @media (max-width: 425px) {
-    #hero.mobile {
+    #hero, #hero.mobile {
         padding: 0 1.5em;
         max-height: 200px;
         background: none;
         text-align: center;
     }
 
-    #hero h1 {
+    #hero-mobile h1 {
         font-size: 1.8rem;
         margin-top: 0.8em;
     }
@@ -572,7 +572,7 @@ button[type="submit"]:hover {
         z-index: 1;
     }
 
-    #hero input[type="button"] {
+    #hero input[type="button"], #hero-mobile input[type="button"] {
         width: 12em;
         height: 2.5em;
         border-radius: 5px;
@@ -589,7 +589,7 @@ button[type="submit"]:hover {
         font-size: 2rem;
     }
 
-    #about {
+    #about, #about-mobile {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -600,6 +600,7 @@ button[type="submit"]:hover {
     }
 
     #about .section-description,
+    #about-mobile .section-description,
     #learn .section-description,
     #contact-us .section-description {
         width: 100%;
@@ -608,7 +609,8 @@ button[type="submit"]:hover {
         font-size: 0.8rem;
     }
 
-    #about img {
+    #about img,
+    #about-mobile img {
         position: static;
         width: 100%;
         object-fit: cover;

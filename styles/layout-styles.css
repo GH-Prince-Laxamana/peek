@@ -572,7 +572,8 @@ footer p {
         font-size: 3rem;
     }
 
-    #about h1, #about-mobile h1,
+    #about h1,
+    #about-mobile h1,
     #learn h1,
     #contact-us h1 {
         font-size: 2rem;
@@ -661,5 +662,102 @@ footer p {
 
     .footer-icons a {
         font-size: 1rem;
+    }
+}
+
+@media print {
+
+    html,
+    body {
+        background: #fff !important;
+        color: #000 !important;
+        font-size: 12pt !important;
+        font-family: 'Poppins', sans-serif !important;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    #page-loader,
+    .loading-spinner,
+    .loader-logo,
+    header,
+    nav,
+    footer,
+    iframe,
+    video,
+    canvas,
+    img,
+    #quiz,
+    #burger,
+    #nav-overlay,
+    #nav-menu,
+    input[type="button"],
+    input[type="submit"],
+    button,
+    a[href^="javascript:"],
+    script,
+    .desc-highlight,
+    figcaption,
+    input,
+    textarea {
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    #hero {
+        max-height: 100px !important;
+        padding: 0 !important;
+        margin: 0 auto !important;
+    }
+
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+        border: none !important;
+        overflow: visible !important;
+        text-align: center !important;
+    }
+
+    main,
+    section,
+    article,
+    .content {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 auto !important;
+        margin: 0 auto !important;
+        text-align: left !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #000 !important;
+        margin-top: 0.5em !important;
+        margin-bottom: 0.3em !important;
+        page-break-after: avoid;
+        font-size: 16pt !important;
+    }
+
+    p {
+        margin-bottom: 0.8em !important;
+    }
+
+    section,
+    article,
+    div {
+        page-break-inside: avoid !important;
+    }
+
+    @page {
+        margin: 1cm;
     }
 }

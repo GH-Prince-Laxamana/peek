@@ -61,6 +61,7 @@
         </nav>
     </header>
 
+    <!-- TABLET DESKTOP HERO -->
     <div id="hero" class="tablet desktop">
         <h1>Look into Your Privacy,<br>Keep Your Online Safety.</h1>
 
@@ -73,8 +74,19 @@
         risky terms and protect your data. Maintain control of your online persona.
     </p>
 
+    <!-- MOBILE HERO -->
+    <div id="hero" class="mobile">
+        <h1>Look into Your Privacy,<br>Keep Your Online Safety.</h1>
+
+        <p id="hero-subtitle" class="mobile">
+            Online privacy protects your choices, identity, and safety. Spot risky terms and keep control of your data.
+        </p>
+
+        <a id="cta-button" href="#learn"><input type="button" value="Start Learning"></a>
+    </div>
+
     <main>
-        <section id="about">
+        <section id="about" class="tablet desktop">
             <div class="about-text">
                 <h1>About <i>peek</i></h1>
                 <p class="section-description">
@@ -92,14 +104,29 @@
             <img src="images/about-img.png" alt="About Image">
         </section>
 
+        <section id="about" class="mobile">
+            <h1>About <i>peek</i></h1>
+            <img src="images/about-img.png" alt="About Image">
+            <p class="section-description">
+                At Peek, we believe privacy should be clear and in your control. Since policies are often long and
+                confusing, we highlight what matters, flag risks, and share tips to protect your data, so you can make
+                safer choices online.
+            </p>
+        </section>
+
         <section id="learn">
             <h1>Learn</h1>
 
-            <p class="section-description">
+            <p class="section-description desktop tablet">
                 Learning about online privacy should be straightforward. Our guides provide clear, practical
                 insights on
                 what to keep private, how to identify risky terms, and how to approach privacy policies with
                 confidence.
+                <span class="desc-highlight">Click a lesson below to learn.</span>
+            </p>
+
+            <p class="section-description mobile">
+                Learning about online privacy should be straightforward.
                 <span class="desc-highlight">Click a lesson below to learn.</span>
             </p>
 
@@ -135,7 +162,7 @@
                 <div class="contact-text">
                     <h3>We'd love to hear from you</h3>
 
-                    <p class="section-description">
+                    <p class="section-description tablet desktop">
                         Whether you have questions, feedback, or suggestions about Peek, we’re here to help.
                         Your thoughts can make online privacy easier and safer for everyone.
                     </p>

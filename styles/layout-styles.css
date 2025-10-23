@@ -229,7 +229,7 @@ footer p {
 
 .mobile,
 .header-and-nav.mobile {
-    display: none;
+    display: none !important;
 }
 
 /* Media Queries */
@@ -287,7 +287,7 @@ footer p {
     }
 
     section h1 {
-        font-size: 3rem;
+        font-size: 4rem;
     }
 
     .lesson-heading {
@@ -387,15 +387,16 @@ footer p {
 
     .tablet,
     .desktop {
-        display: none;
+        display: none !important;
     }
 
+    .mobile,
     .header-and-nav.mobile {
-        display: block;
+        display: block !important;
     }
 
     header.mobile {
-        display: flex;
+        display: flex !important;
         flex-wrap: wrap;
         flex-direction: row;
         justify-content: space-between;
@@ -559,12 +560,22 @@ footer p {
         font-size: 3rem;
     }
 
+    #about h1,
+    #learn h1,
+    #contact-us h1 {
+        font-size: 2rem;
+    }
+
     .lesson-heading {
         font-size: 1.5rem;
     }
 
     section h3 {
         font-size: 1.1rem;
+    }
+
+    .contact-text h3 {
+        font-size: 1.5rem;
     }
 
     section h4 {
